@@ -1,7 +1,7 @@
 {
-  "name": "solid-wizard",
-  "version": "1.0.3",
-  "description": "An wizard component to solid js XD",
+  "name": "@digichanges/solid-wizard",
+  "version": "1.0.1",
+  "description": "A wizard component to solid js XD",
   "scripts": {
     "start": "vite",
     "dev": "vite",
@@ -26,5 +26,13 @@
   "dependencies": {
     "solid-js": "^1.6.10"
   },
-  "main": "/index.tsx"
+  "main": "/index.tsx",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DigiChanges/solid-wizard.git"
+  },
+  "bugs": {
+    "url": "https://github.com/DigiChanges/solid-wizard/issues"
+  },
+  "homepage": "https://github.com/DigiChanges/solid-wizard#readme"
 }

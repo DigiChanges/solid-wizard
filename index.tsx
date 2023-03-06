@@ -3,16 +3,6 @@ import styles from './wizard.module.css';
 
 interface stepBarProps {
     stepsQuantity: number;
-    lineStartColor?: string;
-    lineEndColor?: string;
-    lineHeight?: string;
-    numbersHeight?: string;
-    numbersWidth?: string;
-    numbersContainerStartColor?: string;
-    numbersContainerEndColor?: string;
-    numberStartColor?: string;
-    numberEndColor?: string;
-    effectTotalTime?: string;
     actualStep: number;
 }
 const StepBar: Component<stepBarProps> = ( props ) =>

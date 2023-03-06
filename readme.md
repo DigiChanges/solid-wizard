@@ -9,10 +9,10 @@ Is so easy to use the wizard, you can do this in just some simple steps:
 ### Instalation
 If you are using npm:
 
-    npm intall solid-wizard
+    npm i @digichanges/solid-wizard
 or if you are using pnpm:
 
-    pnpm install solid-wizard
+    pnpm install @digichanges/solid-wizard
 
 ### Create the parent component and his management state.
 
