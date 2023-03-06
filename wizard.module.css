@@ -1,0 +1,57 @@
+
+.wizardContainer{
+    width: 100%;
+    background: transparent;
+    display: flex;
+    align-items: center;
+
+}
+
+.wizardStepInactive{
+    flex-grow: 0;
+    background-color: #f5f5f5;
+    transition: background-color 1s, color 1s;
+    transition-delay: 1s;
+    width:26px;
+    height: 26px;
+    color:black;
+    border-radius:50%;
+    z-index: 100;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.wizardStepActive{
+    flex-grow: 0;
+    background-color: #41B400;
+    transition: background-color 1s, color 1s;
+    transition-delay: 1s;
+    width:26px;
+    height: 26px;
+    border-radius:50%;
+    z-index: 100;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:white;
+
+}
+
+.lineInactive{
+    background: linear-gradient(to right, #41B400 50%, #f5f5f5 50% ) -100% center/200%;
+    transition: background 1s;
+    transform: rotate(180deg);
+    height: 6px;
+    z-index: 50;
+    flex-grow: 1;
+}
+
+.lineActive{
+    background: linear-gradient(to right, #41B400 50%, #f5f5f5 50%  ) 0 center/200%;
+    transition: background 1s;
+    transform: rotate(180deg);
+    height: 6px;
+    z-index: 50;
+    flex-grow: 1;
+}
