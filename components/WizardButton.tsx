@@ -1,4 +1,5 @@
 import {Component, Accessor, Setter} from "solid-js";
+import styles from "../styles/wizardButton.module.css"
 
 interface WizardButtonProps {
     children: string;
@@ -13,10 +14,10 @@ const WizardButton: Component<WizardButtonProps> = props => {
     {
         if (props.next)
         {
-            return <button onClick={() => props.setStep(props.step() + 1)} class={props.stepsQuantity === props.step()  ? 'disabled nextStep' : 'nextStep'} disabled={props.stepsQuantity === props.step()  ? true : false }>{props.children}</button>;
+            return <button onClick={() => props.setStep(props.step() + 1)} class={props.stepsQuantity === props.step()  ? styles.wizardButtonDisabled : styles.wizardButton} disabled={props.stepsQuantity === props.step()  ? true : false }>{props.children}</button>;
         }
         return (
-            <button onClick={() => props.setStep(props.step() - 1)} class={props.step() === 1 ? 'prevStep disabled' : 'prevStep'} disabled={props.step() === 1 ? true : false}>{props.children}</button>
+            <button onClick={() => props.setStep(props.step() - 1)} class={props.step() === 1 ? styles.wizardButtonDisabled : styles.wizardButton} disabled={props.step() === 1 ? true : false}>{props.children}</button>
         );
     };
 
