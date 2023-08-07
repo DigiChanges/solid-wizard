@@ -1,9 +1,9 @@
-import {Component, Switch, Match, JSXElement, For} from 'solid-js';
+import {Component, Switch, Match, For, JSX} from 'solid-js';
 
 interface WizardProps {
     currentStep: number;
-    fallback: JSXElement;
-    stepsArray: any[]
+    fallback: JSX.Element;
+    stepsArray: Function[]
 }
 export const Wizard: Component<WizardProps> = props => {
     return (
