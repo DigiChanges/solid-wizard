@@ -1,5 +1,5 @@
 import {Component, Accessor, Setter} from "solid-js";
-import styles from "../styles/wizardButton.module.css"
+import styles from "./wizardButton.module.css"
 
 interface WizardButtonProps {
     children: string;
@@ -9,7 +9,7 @@ interface WizardButtonProps {
     stepsQuantity: number;
 }
 
-const WizardButton: Component<WizardButtonProps> = props => {
+export const WizardButton: Component<WizardButtonProps> = props => {
     const renderButton = () =>
     {
         if (props.next)
@@ -25,5 +25,3 @@ const WizardButton: Component<WizardButtonProps> = props => {
         renderButton()
     )
 };
-
-export default WizardButton

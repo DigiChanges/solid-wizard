@@ -1,11 +1,6 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 .wizardButton {
     @apply bg-gray-600 text-white font-sans w-[140px] h-[50px] text-lg text-center rounded-lg
 }
-
 .wizardButton:hover {
     @apply bg-gray-600/75
 }

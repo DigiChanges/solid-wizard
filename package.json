@@ -1,7 +1,7 @@
 {
   "name": "@digichanges/solid-wizard",
   "version": "1.0.1",
-  "description": "A wizard component to solid js XD",
+  "description": "A wizard component for solid-js.",
   "scripts": {
     "start": "vite",
     "dev": "vite",
@@ -16,7 +16,7 @@
     "stepper",
     "digiChanges"
   ],
-  "author": "Mathzilla",
+  "author": "Mathzilla and Veronica Dip",
   "license": "MIT",
   "devDependencies": {
     "tailwindcss": "^3.3.3",
