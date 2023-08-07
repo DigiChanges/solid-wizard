@@ -5,7 +5,7 @@ interface WizardProps {
     fallback: JSXElement;
     stepsArray: any[]
 }
-const Wizard: Component<WizardProps> = props => {
+export const Wizard: Component<WizardProps> = props => {
     return (
         <>
             <Switch fallback={props.fallback}>
@@ -20,5 +20,3 @@ const Wizard: Component<WizardProps> = props => {
         </>
     )
 }
-
-export default Wizard;
