@@ -1,46 +1,88 @@
-## StepBar
+# solid-wizard
 
-The **StepBar** component is an aesthetical component that allows you to show users from your app which step is a modal or another specific component.
+The solid-wizard library provides a collection of three ready-to-use components: `Wizard`, `WizardButton`, and `StepBar`.
+
+## Wizard Component
+
+The `Wizard` component serves as a dynamic interface for managing and displaying various components based on the user's current step.
+
+## WizardButton Component
+
+The `WizardButton` component lets users navigate through different steps. The "back" button automatically deactivates when on the first step, and similarly, the "next" button deactivates when on the final step.
+
+## StepBar Component
+
+The `StepBar` component is an aesthetical component that allows you to show users from your app which step is a modal or another specific component.
 
 # Get started
 
 Is so easy to use the wizard, you can do this in just some simple steps:
 
 ### Installation
+
 If you are using npm:
 
     npm i @digichanges/solid-wizard
-or if you are using pnpm:
+Alternatively, for pnpm users:
 
     pnpm install @digichanges/solid-wizard
 
 ### Create the parent component and its management state.
 
-1 - Import the component.
+Import the solid-wizard components and the ones you want to display in the wizard:
 
-    import Wizard from 'solid-wizard';
+    import { Wizard, WizardButton, StepBar } from "@digichanges/solid-wizard";
 
-2 - The wizard must be inside o a parent element that should have a state, this state will allow you to control the step in which the wizard is found.
+    import StepOne from "./components/StepOne/StepOne";
 
-3 - Now you could add two buttons that will change the value of the state we created in the previous step as in the example below.
+And now you can follow the next steps:
 
-![](https://media.discordapp.net/attachments/1077350703443492987/1082363523608363129/image.png?width=1439&height=625)
+1 - The wizard must be inside a parent element that should have a state, this state will allow you to control the step in which the wizard is found.
 
-### Add the required props.
-* add the props stepsQuantity that should receive the number of steps you want to have and the actual step that should receive the state we created before.
+2 - Make an array filled with the step components in the order that you want them to be displayed.
 
-![](https://media.discordapp.net/attachments/1077350703443492987/1081607533824843806/image.png?width=1039&height=75)
+3 - Add the `Wizard` component with its corresponding props.
+
+4 - Add two `WizardButtons`, one to go back and the other to go next.
+
+5 - Add the `StepBar` with its corresponding props.
+
+![](https://cdn.discordapp.com/attachments/1138540438752612446/1138543563249029221/Screen_Shot_2023-08-08_at_3.37.21_PM.png)
+
+### Wizard Props
+
+| Name        | Function                                                                  | Required | Type        |
+|-------------|---------------------------------------------------------------------------|----------|-------------|
+| currentStep | Defines current step.                                                     | ✅        | number      |
+| fallback    | Fallback component is needed to display something when some step is missing. | ✅        | JSX.Element |
+| stepsArray  | Defines the steps that will be shown and in which order.                 | ✅        | Function[]  |
+
+### WizardButton Props
+
+| Name          | Function                                                                                              | Required | Type              |
+|---------------|-------------------------------------------------------------------------------------------------------|----------|-------------------|
+| step          | Defines current step.                                                                                 | ✅        | Accessor<number>  |
+| setStep       | The signal setter of the current step that lets the button function.                                  | ✅        | Setter<number>    |
+| next          | Defines if this is the "next" button. If true, clicking it sets the current step to `currentStep + 1` | ✅        | boolean           |
+| stepsQuantity | Defines the total quantity of steps inside the wizard component.                                      | ✅        | number            |
+| children      | Defines the text inside the button.                                                                   | ❌        | string            |
+
+
+### StepBar Props
+
+| Name                       | Function                                                                                       | Required | Type   |
+|----------------------------|------------------------------------------------------------------------------------------------|----------|--------|
+| stepsQuantity              | Defines the total quantity of steps inside the wizard component.                               | ✅        | number |
+| actualStep                 | Defines actual Step.                                                                           | ✅        | number |
+
+
+### Example in CodeSandbox
 
 This should be the output:
 
-![](https://media.discordapp.net/attachments/1077350703443492987/1081608684167241789/image.png?width=918&height=268)
+https://codesandbox.io/p/sandbox/weathered-dew-c3l975?file=%2Fsrc%2FApp.tsx%3A3%2C1-4%2C52
 
-### Props
-
-| Name                       | Function                                                                                       | Required |
-|----------------------------|------------------------------------------------------------------------------------------------|----------|
-| stepsQuantity              | Defines the total quantity of steps inside the wizard component.                                        | ✅        |
-| actualStep                 | Defines actual Step.                                                                           | ✅        |
+### Custom styles
 
 If you want you can change all the other CSS properties by changing the styled CSS classes that control the component.
 
