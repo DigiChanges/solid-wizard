@@ -2,7 +2,7 @@ import {Component, Accessor, Setter} from "solid-js";
 import styles from "./wizardButton.module.css"
 
 interface WizardButtonProps {
-    children: string;
+    children?: string;
     step: Accessor<number>;
     setStep: Setter<number>;
     next: boolean;
