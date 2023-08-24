@@ -7,6 +7,8 @@ interface WizardButtonProps {
     setStep: Setter<number>;
     next: boolean;
     stepsQuantity: number;
+    buttonStyle?: string;
+    disabledButtonStyle?: string;
 }
 
 export const WizardButton: Component<WizardButtonProps> = props => {
@@ -14,10 +16,10 @@ export const WizardButton: Component<WizardButtonProps> = props => {
     {
         if (props.next)
         {
-            return <button onClick={() => props.setStep(props.step() + 1)} class={props.stepsQuantity === props.step()  ? styles.wizardButtonDisabled : styles.wizardButton} disabled={props.stepsQuantity === props.step()  ? true : false }>{props.children}</button>;
+            return <button onClick={() => props.setStep(props.step() + 1)} class={props.stepsQuantity === props.step()  ? `${styles.wizardButtonDisabled} ${props.disabledButtonStyle}` : `${styles.wizardButton} ${props.buttonStyle}`} disabled={props.stepsQuantity === props.step()}>{props.children}</button>;
         }
         return (
-            <button onClick={() => props.setStep(props.step() - 1)} class={props.step() === 1 ? styles.wizardButtonDisabled : styles.wizardButton} disabled={props.step() === 1 ? true : false}>{props.children}</button>
+            <button onClick={() => props.setStep(props.step() - 1)} class={props.step() === 1 ? `${styles.wizardButtonDisabled} ${props.disabledButtonStyle}` : `${styles.wizardButton} ${props.buttonStyle}`} disabled={props.step() === 1}>{props.children}</button>
         );
     };
 
