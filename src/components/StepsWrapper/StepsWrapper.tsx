@@ -10,6 +10,8 @@ export const StepsWrapper: Component<StepsWrapperProps> = (props) =>
 {
     const store = useCountContext();
 
+    store.stepsSetter(props.children.length);
+
     return (
         <>
             <Switch fallback={props.fallback}>
