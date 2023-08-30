@@ -3,7 +3,7 @@ import {CountProvider} from "../../context/CountContext";
 
 interface WizardProps {
     fallback: JSX.Element;
-    children: any;
+    children: [JSX.FunctionElement];
 }
 export const Wizard: Component<WizardProps> = props => {
     return (

@@ -2,7 +2,7 @@ import {Component, For, JSX, Match, Switch} from "solid-js";
 import {useCountContext} from "../../context/CountContext";
 
 interface StepsWrapperProps {
-    children: any;
+    children: [JSX.FunctionElement];
     fallback: JSX.Element;
 }
 

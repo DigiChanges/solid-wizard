@@ -1,7 +1,7 @@
-import {Component} from "solid-js";
+import {Component, JSX} from "solid-js";
 
 interface WizardHeaderProps {
-    children: any;
+    children: [JSX.FunctionElement];
 }
 
 export const WizardHeader: Component<WizardHeaderProps> = (props) => {

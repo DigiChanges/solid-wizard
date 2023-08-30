@@ -1,7 +1,7 @@
-import {Component} from "solid-js";
+import {Component, JSX} from "solid-js";
 
 interface WizardFooterProps {
-    children: any;
+    children: [JSX.FunctionElement];
 }
 
 export const WizardFooter: Component<WizardFooterProps> = (props) => {
