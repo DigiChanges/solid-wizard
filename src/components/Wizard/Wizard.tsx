@@ -1,22 +1,14 @@
-import {Component, Switch, Match, For, JSX} from 'solid-js';
+import {Component, JSX} from 'solid-js';
+import {CountProvider} from "../../context/CountContext";
 
 interface WizardProps {
-    currentStep: number;
     fallback: JSX.Element;
-    stepsArray: Function[]
+    children: [JSX.FunctionElement];
 }
 export const Wizard: Component<WizardProps> = props => {
     return (
-        <>
-            <Switch fallback={props.fallback}>
-                <For each={props.stepsArray}>{(StepComponent, index) =>
-                    <Match when={props.currentStep === index() + 1}>
-                        <p>Step {index() + 1}</p>
-                        {StepComponent()}
-                    </Match>
-                }
-                </For>
-            </Switch>
-        </>
+        <CountProvider>
+            {props.children}
+        </CountProvider>
     )
 }
