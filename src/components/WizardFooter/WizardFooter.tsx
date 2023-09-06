@@ -1,13 +1,13 @@
 import {Component, JSX} from "solid-js";
 
 interface WizardFooterProps {
-    children: [JSX.FunctionElement];
+    children: [any, any];
 }
 
 export const WizardFooter: Component<WizardFooterProps> = (props) => {
     return (
         <>
-            {props.children}
+            {props.children as unknown as [JSX.FunctionElement]}
         </>
     );
 };

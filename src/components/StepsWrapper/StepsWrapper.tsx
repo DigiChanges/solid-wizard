@@ -2,7 +2,7 @@ import {Component, For, JSX, Match, Switch} from "solid-js";
 import {useCountContext} from "../../context/CountContext";
 
 interface StepsWrapperProps {
-    children: [JSX.FunctionElement];
+    children: any;
     fallback: JSX.Element;
 }
 
@@ -15,7 +15,7 @@ export const StepsWrapper: Component<StepsWrapperProps> = (props) =>
     return (
         <>
             <Switch fallback={props.fallback}>
-                <For each={props.children}>{(StepComponent, index) =>
+                <For each={props.children as unknown as [JSX.FunctionElement]}>{(StepComponent, index) =>
                 <Match when={store.stepsGetter() === index() + 1} keyed={true}>
                     {StepComponent()}
                 </Match>
