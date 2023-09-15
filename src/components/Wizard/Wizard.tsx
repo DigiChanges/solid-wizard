@@ -2,12 +2,12 @@ import {Component, JSX} from 'solid-js';
 import {CountProvider} from "../../context/CountContext";
 
 interface WizardProps {
-    children: [any, any]
+    children: unknown
 }
 export const Wizard: Component<WizardProps> = props => {
     return (
         <CountProvider>
-            {props.children as unknown as [JSX.FunctionElement]}
+            {props.children as [JSX.FunctionElement]}
         </CountProvider>
     )
 }
